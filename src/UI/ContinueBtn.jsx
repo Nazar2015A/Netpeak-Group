@@ -4,29 +4,45 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { MyAppContext } from "../context/Context";
 
-const ContinueBtn = ({ pathname, height = null, currentHeight = null, activeBtn }) => {
+const ContinueBtn = ({
+  pathname,
+  height = null,
+  currentHeight = null,
+  activeBtn = null,
+  selectedBehaviours = null,
+}) => {
   const { setSelectedInfo } = useContext(MyAppContext);
   const navigate = useNavigate();
   const handleNavigate = () => {
-    if(height && activeBtn === 'imperial') {
-      setSelectedInfo(prev => ({...prev, imperialHeight: height, imperialCurrentHeight: currentHeight}))
+    if (height && activeBtn === "imperial") {
+      setSelectedInfo((prev) => ({
+        ...prev,
+        imperialHeight: height,
+        imperialCurrentHeight: currentHeight,
+      }));
     }
-    if(height && activeBtn === 'metric') {
-      setSelectedInfo(prev => ({...prev, metricHeight: height, metricCurrentHeight: currentHeight}))
+    if (height && activeBtn === "metric") {
+      setSelectedInfo((prev) => ({
+        ...prev,
+        metricHeight: height,
+        metricCurrentHeight: currentHeight,
+      }));
     }
-    navigate(pathname)
-  }
+    if (selectedBehaviours?.length !== 0) {
+      setSelectedInfo((prev) => ({ ...prev, behaviours: selectedBehaviours }));
+    }
+    navigate(pathname);
+  };
   return (
-    <StyledContinueBtn onClick={handleNavigate}>
-      Continue
-    </StyledContinueBtn>
+    <StyledContinueBtn onClick={handleNavigate}>Continue</StyledContinueBtn>
   );
 };
 ContinueBtn.propTypes = {
   pathname: PropTypes.string.isRequired,
   height: PropTypes.string,
   currentHeight: PropTypes.string,
-  activeBtn: PropTypes.string.isRequired,
+  activeBtn: PropTypes.string,
+  selectedBehaviours: PropTypes.array,
 };
 const StyledContinueBtn = styled.button`
   width: 100%;
