@@ -7,7 +7,8 @@ const MyAppProvider = ({ children }) => {
     goal: '',
     imperialHeight: null,
     imperialCurrentHeight: null,
-    metricalCurrentHeight: null,
+    metricHeight: null,
+    metricCurrentHeight: null,
     behaviours: [],
     physicalExercise: ''
   });

@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { cart } from "./TheGoal-data";
+import { MyAppContext } from "../../context/Context";
 
 const TheGoalCart = () => {
+  const { setSelectedInfo } = useContext(MyAppContext);
   const navigate = useNavigate();
+  const handleNavigate = ({title}) => {
+    setSelectedInfo(prev => ({...prev, goal: title}))
+    navigate("/female/measure-yourself")
+  }
   return (
     <StyledDiv>
       {cart.map((cartItem) => (
         <StyledCartDiv
           key={cartItem.id}
-          onClick={() => navigate("/female/measure-yourself")}
+          onClick={() => handleNavigate(cartItem)}
         >
           <StyledCartHeading2>{cartItem.title}</StyledCartHeading2>
           <StyledImg src={cartItem.img} alt="" />
@@ -23,6 +29,10 @@ const StyledDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 `;
 const StyledCartDiv = styled.div`
   cursor: pointer;
