@@ -19,7 +19,7 @@ const TheGoalCart = () => {
           onClick={() => handleNavigate(cartItem)}
         >
           <StyledCartHeading2>{cartItem.title}</StyledCartHeading2>
-          <StyledImg src={cartItem.img} alt="" />
+          <StyledImg src={cartItem.img} alt={cartItem.title} />
         </StyledCartDiv>
       ))}
     </StyledDiv>

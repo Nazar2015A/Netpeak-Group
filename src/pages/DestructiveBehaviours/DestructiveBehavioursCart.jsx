@@ -41,7 +41,11 @@ const DestructiveBehavioursCart = () => {
     </StyledDiv>
   );
 };
-const StyledDiv = styled.div``;
+const StyledDiv = styled.div`
+  @media (max-width: 400px) {
+    margin: 0 10px;
+  }
+`;
 const StyledContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -75,5 +79,8 @@ const StyledCartItemParagraph = styled.p`
   letter-spacing: 0.30000001192092896px;
   text-align: left;
   color: #2d3436;
+  @media (max-width: 400px) {
+    max-width: auto;
+  }
 `;
 export default DestructiveBehavioursCart;
