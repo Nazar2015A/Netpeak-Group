@@ -13,6 +13,7 @@ const ContinueBtn = ({
 }) => {
   const { setSelectedInfo } = useContext(MyAppContext);
   const navigate = useNavigate();
+  
   const handleNavigate = () => {
     if (height && activeBtn === "imperial") {
       setSelectedInfo((prev) => ({
@@ -33,6 +34,7 @@ const ContinueBtn = ({
     }
     navigate(pathname);
   };
+
   return (
     <StyledContinueBtn onClick={handleNavigate}>Continue</StyledContinueBtn>
   );

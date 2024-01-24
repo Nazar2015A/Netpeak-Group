@@ -5,7 +5,7 @@ import ContinueBtn from "../../UI/ContinueBtn";
 
 const MeasureYourself = () => {
   const [activeBtn, setActiveBtn] = useState("imperial");
-  const [isOpenedDropDown, setIsOpenedDrowDown] = useState(false);
+  const [isOpenedDropDown, setIsOpenedDrowDown] = useState(true);
   const [height, setHeight] = useState("");
   const [currentHeight, setCurrentHeight] = useState("");
 
