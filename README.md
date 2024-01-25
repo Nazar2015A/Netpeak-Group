@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+STEPS FOR INSTALL PROJECT:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+### `npm install`
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+FOR TESTING: 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run test`
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Цей проект містить в собі 4 (SPA) сторінки:
 
-### `npm run build`
+1 - /female/the-goal
+2 - /female/measure-yourself
+3 - /female/destructive-behaviour
+4 - /female/physical-exercise
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Бібліотеки які містить цей проект: 
+react-router-dom (для реалізації роутингу); 
+eslint (для чистого коду);
+framer-motion (для анімацій появи сторінок та drop-down); 
+styled-components (для стилізації елементів).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Сторінки побудовані за допомогою "react-router-dom" та з використанням HashRouter замість звичайного BrowserRouter тому, що GitHub pages погано працює із ним і можу виникати помилки - Page Not Found
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1 - При переході по шляху "/" (домашня сторінка) за допомогою Navigate перенаправляє на /female/the-goal (стартова сторінка проекту).
+1.1 - На кожні сторінці є навігація (Navbar), в якому є іконка для повернення на попередню сторінку (за допомогою useNavigate).
+1.2 - Кожна сторінка появляється із анімацією за допомогою framer-motion.
+1.3 - На першій сторінці (/female/the-goal) при кліку на одну із карточок, автоматично перенаправляє на слідуючу сторінку (/female/measure-yourself),та в залежності від натисненої карточки цей вибір записується в useContext (це поле goal).
 
-### `npm run eject`
+2 - На другій сторінці (/female/measure-yourself) одразу появляється drop-down в який можна записати height та currentHeight, та обрати значення (imperial чи metric). Також можна приховати drop-down натиснувши на активне значення.
+2.1 - При кліку на кнопку Continue, автоматично перенаправляє на слідуючу сторінку (/female/destructive-behaviour), та в залежності від обраного значення (imperial чи metric) записує вибір в useContext (imperialHeight, imperialCurrentHeight, metricHeight, metricCurrentHeight).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3 - На третій сторінці (/female/destructive-behaviour) можна вибрати декілька карточок (активні карточки мають темніший background), та вона автоматично запишуться в useContext (behaviours: []).
+3.1 Також можна деактивовувати каточки (якщо карточка активна і натиснути на неї вона деактивуєтсья).
+3.2 - При кліку на кнопку Continue автоматично перенаправляє на останню сторінку (/female/physical-exercise).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4 - На останній сторінці (/female/physical-exercise) можна вибрати тільки одну карточку, та вибрана карточка запишеться в useContext (physicalExercise).
+4.1 Свій вибір можна змінити просто натиснувши на іншу карточку.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5 - При перевірці продуктивності за допомогою Lighthouse Performance Audit було досягнуто 95-100 ефективності.
+6 - Також було написано тести за допомогою Jest та React Testing Library для всіх сторінок.
