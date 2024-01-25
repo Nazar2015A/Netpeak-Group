@@ -6,6 +6,7 @@ import PhysicalExerciseCart from "./PhysicalExerciseCart";
 const PhysicalExercise = () => {
   return (
     <StyledSection
+      data-testid="physical-exercise-page"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}

@@ -1,20 +1,21 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { cart } from "./TheGoal-data";
+import { theGoalCart } from "./TheGoal-data";
 import { MyAppContext } from "../../context/Context";
 
 const TheGoalCart = () => {
   const { setSelectedInfo } = useContext(MyAppContext);
   const navigate = useNavigate();
-  const handleNavigate = ({title}) => {
-    setSelectedInfo(prev => ({...prev, goal: title}))
-    navigate("/female/measure-yourself")
-  }
+  const handleNavigate = ({ title }) => {
+    setSelectedInfo((prev) => ({ ...prev, goal: title }));
+    navigate("/female/measure-yourself");
+  };
   return (
-    <StyledDiv>
-      {cart.map((cartItem) => (
+    <StyledDiv data-testid="the-goal-cart">
+      {theGoalCart.map((cartItem) => (
         <StyledCartDiv
+          data-testid="the-goal-cart-item"
           key={cartItem.id}
           onClick={() => handleNavigate(cartItem)}
         >

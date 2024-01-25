@@ -5,7 +5,7 @@ import salt from "../../assets/img/salt.png";
 import pizza from "../../assets/img/pizza.png";
 import cross from "../../assets/img/cross.png";
 
-export const DestructiveBehavioursCartItem = [
+export const destructiveBehavioursCartItem = [
   { id: 1, img: moon, title: "I don't rest enough", active: false },
   { id: 2, img: donut, title: "I have a sweet tooth", active: false },
   { id: 3, img: soda, title: "I have too much soda", active: false },

@@ -29,7 +29,7 @@ const PhysicalExerciseCart = () => {
   }, [cartItems]);
 
   return (
-    <StyledDiv>
+    <StyledDiv data-testid="physical-exercise-cart">
       <StyledImg src={activeGirl} alt="Active Girl" />
       <StyledContent>
         {cartItems.map((exercise) => (
@@ -57,7 +57,7 @@ const StyledDiv = styled.div`
 const StyledImg = styled.img`
   width: 175px;
   height: 365px;
-`
+`;
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
