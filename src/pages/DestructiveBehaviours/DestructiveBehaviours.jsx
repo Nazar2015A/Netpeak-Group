@@ -6,6 +6,7 @@ import DestructiveBehavioursCart from "./DestructiveBehavioursCart";
 const DestructiveBehaviours = () => {
   return (
     <StyledSection
+      data-testid="destructive-behaviour-page"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

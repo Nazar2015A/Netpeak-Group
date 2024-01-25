@@ -20,18 +20,21 @@ const MeasureYourself = () => {
 
   return (
     <StyledSection
+      data-testid="measure-yourself-page"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <StyledMeasureDiv>
         <StyledMeasureBtns
+          data-testid="imperial-btn"
           onClick={() => handleMeasureChange("imperial")}
           active={activeBtn === "imperial"}
         >
           Imperial
         </StyledMeasureBtns>
         <StyledMeasureBtns
+          data-testid="metric-btn"
           onClick={() => handleMeasureChange("metric")}
           active={activeBtn === "metric"}
         >
@@ -46,12 +49,14 @@ const MeasureYourself = () => {
               transition={{ duration: 0.5 }}
             >
               <StyledInput
+                data-testid="height-input"
                 type="number"
                 placeholder={`Height(${activeBtn === "imperial" ? "ft" : "m"})`}
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               />
               <StyledInput
+                data-testid="currentHeight-input"
                 type="number"
                 placeholder={`Current Height(${
                   activeBtn === "imperial" ? "ft" : "m"

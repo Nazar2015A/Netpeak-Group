@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
-import { DestructiveBehavioursCartItem } from "./DestructiveBehaviours-data";
+import { destructiveBehavioursCartItem } from "./DestructiveBehaviours-data";
 import ContinueBtn from "../../UI/ContinueBtn";
 
 const DestructiveBehavioursCart = () => {
-  const [cartItems, setCartItems] = useState(DestructiveBehavioursCartItem);
+  const [cartItems, setCartItems] = useState(destructiveBehavioursCartItem);
 
   const handleCartItemClick = (itemId) => {
     setCartItems((prevItems) =>
@@ -18,10 +18,11 @@ const DestructiveBehavioursCart = () => {
   }, [cartItems]);
 
   return (
-    <StyledDiv>
+    <StyledDiv data-testid="destructive-behaviour-cart">
       <StyledContent>
         {cartItems.map((cartItem) => (
           <StyledCartItem
+            data-testid="destructive-behaviour-cart-item"
             key={cartItem.id}
             active={cartItem.active}
             onClick={() => handleCartItemClick(cartItem.id)}
