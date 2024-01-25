@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Netpeak-Group/static/css/main.b58da9e8.css",
+    "main.js": "/Netpeak-Group/static/js/main.9fd34593.js",
+    "static/js/787.0a552642.chunk.js": "/Netpeak-Group/static/js/787.0a552642.chunk.js",
+    "static/media/activeGirl.png": "/Netpeak-Group/static/media/activeGirl.18bcc4ef6b83657bf0d9.png",
+    "index.html": "/Netpeak-Group/index.html",
+    "static/media/left.svg": "/Netpeak-Group/static/media/left.ebbea08db81c29864b1ff4e915b294e8.svg",
+    "main.b58da9e8.css.map": "/Netpeak-Group/static/css/main.b58da9e8.css.map",
+    "main.9fd34593.js.map": "/Netpeak-Group/static/js/main.9fd34593.js.map",
+    "787.0a552642.chunk.js.map": "/Netpeak-Group/static/js/787.0a552642.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b58da9e8.css",
+    "static/js/main.9fd34593.js"
+  ]
+}
